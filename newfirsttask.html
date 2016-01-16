@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport"  content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+function save() {
+  var fsname=document.getElementById("fname").value;
+  var lsname=document.getElementById("lname").value;
+  var dob=document.getElementById("bday").value;
+  var pwd=document.getElementById("pwdd").value;
+  var id=document.getElementById("uid").value;
+   localStorage.setItem("fnam",fsname);
+   localStorage.setItem("lnam",lsname);
+   localStorage.setItem("db",dob);
+   localStorage.setItem("pw",pwd);
+   localStorage.setItem("idd",id);
+}
+function removess() {
+localStorage.removeItem("fnam");
+localStorage.removeItem("lnam");
+localStorage.removeItem("db");
+localStorage.removeItem("pw");
+localStorage.removeItem("idd");
+
+}   
+function valid()
+{ var id,pwd,uid,upwd; 
+ id=localStorage.getItem("idd");
+  pwd=localStorage.getItem("pw");
+  uid=document.getElementById("email").value;
+   upwd=document.getElementById("p").value; 
+  if(id==uid && pwd==upwd)
+ {
+return true;
+ }
+ else
+ {
+alert("Not Authenticated"); 
+return false;	
+ }  
+ 
+}
+
+</script>
+
+</head>
+<body>
+
+<div class= "form-group" >
+
+
+  <div class="form-group" style="background-color:#3b5998"  >
+      
+<center>
+      <br/>
+
+<form method="post" action="detail.html" class="form-inline" onsubmit="return valid()"  role="form" id="login" name="login" >
+<font size="5"  color="white">
+ <a href="#" align="left" > facebook </h>      
+</font> 
+ 
+     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+ &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+  <font color="white"><label >Email :</label></font>
+  <input type="text"    id="email" class="form-control" placeholder="Email or Phone" name="email" class="inputtext" value=""> 
+
+  <font color="white"><label >password :</label></font>     
+ <input type="text"   id="p" class="form-control" placeholder="Password" name="pwd"  value="">
+    <input type ="submit" value="Log In" class="btn btn-info" >
+<br/>
+
+<div class="row">
+
+    <div class="col-sm-7">
+</div>
+    <div class="col-sm-2">
+
+<font  color="white">
+
+<div class="checkbox">
+
+  <label><input type="checkbox" value="">Keep me logged in </label>
+
+</div>
+</div>
+    <div class="col-sm-2">
+ &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<a href="#"><u>Forgotten your password?</u></a>
+</font>
+</div>
+</div>
+
+</div>
+     </form>
+</center>
+    <br></br> 
+  </div>
+  <div class="form-group">
+    <div class="col-sm-6">
+    <img src="fb.jpg" class="img-responsive" alt="Cinque Terre">
+       </div>
+    <div class="col-sm-6">
+<font size="8" color="blue">
+     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<h size="10px"><b>Sign Up</b></h>
+</font>        
+<form method="post" action="" class="form-horizontal" role="form" id="login" name="login" align="right" >
+         
+      <table class="table " border="0" >
+      <thead>
+       <tr>
+       <td><input type="text"  id="fname" class="form-control" placeholder="First name" name="fname" class="inputtext" value=""></td></tr>
+<tr>
+       <td><input type="text"  id="lname" class="form-control" placeholder="Last name" name="lname" class="inputtext" value=""></td>
+       </tr>
+       </thead>
+       <tbody>
+       <thead>
+       <tr ><td> <input type= "text"  id="uid" class="form-control" placeholder="mobile or email " name="uid"  class="inputtext" value="" ></td></tr>
+       </thead>
+       </tbody>
+       <tbody> 
+       <tr><td><input type= "password" id="pwdd" class="form-control" placeholder="Enter Password " name="pid"  class="inputtext" value="" ></td></tr>       
+       </tbody>
+       <tr><td><label><font size="3" > <h align="center">
+       
+       Birthday :</h></font></label></td></tr>
+    
+        
+       <tr>   <td> <input type="date" id="bday" class="form-control" name="bday" ></td></tr>
+       <tr><td> <label for="male">Male</label>
+  <input type="radio" name="gender" id="male" value="male">
+  <label for="female">Female</label>
+  <input type="radio" name="gender" id="female" value="female">
+</td></tr>   
+    
+      </table>
+       
+      <br><br/>
+        <center>
+       <input type = "button"  value= "Sign Up" class="btn btn-info"  style="height:40px; width:150px" onclick="save()"> 
+       <input type = "button"  value= "Show detail" class="btn btn-info"  style="height:40px; width:150px" onclick="location.href='detail.html'"> 
+       <input type = "button"  value= "Remove detail" class="btn btn-info"  style="height:40px; width:150px" onclick="removess()"> 
+       
+       </center>
+     </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Localstorage</title>
+  <script>
+  function load() {
+  var fname,lname,pwd,dob,uid;
+  fname=localStorage.getItem("fnam");
+    lname=localStorage.getItem("lnam");
+  dob=localStorage.getItem("db");
+  pwd=localStorage.getItem("pw");  
+  uid=localStorage.getItem("idd");
+if(fname)
+{ document.getElementById('fnames').value=fname;
+}
+
+if(lname)
+{ document.getElementById('lnames').value=lname;
+}
+if(dob)
+{ document.getElementById('dobs').value=dob;
+}
+if(pwd)
+{ document.getElementById('pwdds').value=pwd;
+}
+if(uid)
+{ document.getElementById('uids').value=uid;
+}
+
+
+
+}
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" >
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body onload="load()">
+<table class="table " border="0" >
+      <thead>
+       <tr>
+       <td><input type="text"  id="fnames" class="form-control" placeholder="First name" name="fname" class="inputtext" value=""></td>
+       <td><input type="text"  id="lnames" class="form-control" placeholder="Last name" name="lname" class="inputtext" value=""></td>
+       </tr>
+       </thead>
+       <tbody>
+       <thead>
+       <tr ><td> <input type= "text"  id="uids" class="form-control" placeholder="mobile or email " name="uid"  class="inputtext" value="" ></td></tr>
+       </thead>
+       </tbody>
+       <tbody> 
+       <tr><td><input type= "password" id="pwdds" class="form-control" placeholder="Enter Password " name="pid"  class="inputtext" value="" ></td></tr>       
+       <tr><td><input type= "password" id="dobs" class="form-control" placeholder="dob " name="dob"  class="inputtext" value="" ></td></tr> 
+      </tbody>
+</table>
+</body>
+</html>
